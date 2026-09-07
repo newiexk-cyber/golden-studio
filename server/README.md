@@ -63,7 +63,7 @@ Mở trình duyệt kiểm tra:
    - **Start Command:** `npm start`
    - **Instance Type:** `Free`
 5. Thêm các biến môi trường (**Environment Variables**):
-   - `GOOGLE_SHEET_ID`: `1LRCu0pMw9z8xkAJ9IDv0UsndnoCDQuyEyoRWXRDGdcI`
+   - `GOOGLE_SHEET_ID`: `1oMuNluQ6hKDzf-_nj8No1CM4Ez0fSYlHYDsrHdgzjcI`
    - `ALLOWED_ORIGINS`: `https://goldenstudio-903.pages.dev,http://localhost:3000`
    - `NODE_ENV`: `production`
 6. Bấm **Deploy**. Sau 1 phút bạn sẽ nhận được link API dạng: `https://golden-studio-api.onrender.com`.

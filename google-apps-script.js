@@ -17,10 +17,10 @@
 // ==============================================================================
 
 // ID Thư mục gốc chứa toàn bộ các concept trên Google Drive của bạn
-const ROOT_FOLDER_ID = "16BgzGB6Sk6FmX8eiRe5vFWLbFXrDf1zm"; 
+const ROOT_FOLDER_ID = "1WQRFi6lQqTgkEtvRijZCX--sHTUjroUL"; 
 
 // Tên miền Website của bạn (dùng để sinh link mở thẳng concept trên web)
-const WEBSITE_DOMAIN = "https://www.tiemanhtraithom.com"; // Hoặc tên miền của bạn (VD: https://goldenstudio.vn)
+const WEBSITE_DOMAIN = "https://goldenstudio.vn";
 
 
 // ==============================================================================

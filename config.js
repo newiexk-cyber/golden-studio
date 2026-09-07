@@ -26,9 +26,9 @@ const STUDIO_CONFIG = {
 
     googleSheets: {
         enabled: true,
-        sheetId: "1LRCu0pMw9z8xkAJ9IDv0UsndnoCDQuyEyoRWXRDGdcI",
+        sheetId: "1oMuNluQ6hKDzf-_nj8No1CM4Ez0fSYlHYDsrHdgzjcI",
         sheetGid: "0",
-        driveFolderId: "16BgzGB6Sk6FmX8eiRe5vFWLbFXrDf1zm",
+        driveFolderId: "1WQRFi6lQqTgkEtvRijZCX--sHTUjroUL",
         sheetName: "cập nhật concept",
     },
 

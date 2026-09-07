@@ -82,7 +82,7 @@ Backend Express.js nằm trong thư mục `server/` giúp bảo mật Google She
    - **Start Command:** `npm start`
    - **Instance Type:** `Free`
 5. Mục **Environment Variables** (Biến môi trường):
-   - `GOOGLE_SHEET_ID`: `1LRCu0pMw9z8xkAJ9IDv0UsndnoCDQuyEyoRWXRDGdcI`
+   - `GOOGLE_SHEET_ID`: `1oMuNluQ6hKDzf-_nj8No1CM4Ez0fSYlHYDsrHdgzjcI`
    - `GOOGLE_SHEET_GID`: `0`
    - `ALLOWED_ORIGINS`: `https://goldenstudio-903.pages.dev`
    - `NODE_ENV`: `production`
