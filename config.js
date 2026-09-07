@@ -107,8 +107,8 @@ const STUDIO_CONFIG = {
         address: "GOLDEN Studio — Xem bản đồ chỉ đường",
         socials: {
             facebook: "https://www.facebook.com/profile.php?id=100094054747317",
-            instagram: "https://www.instagram.com/goldenstudio.vn/",
-            tiktok: "https://www.tiktok.com/@goldenstudio.vn",
+            instagram: "https://www.instagram.com/golden_studio192/",
+            tiktok: "https://www.tiktok.com/@golden_studio1",
             youtube: "https://www.youtube.com/@goldenstudio",
         }
     },

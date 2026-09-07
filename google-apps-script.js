@@ -81,8 +81,10 @@ function initializeHeaders(sheet) {
     .setFontWeight("bold")
     .setBackground("#111111")
     .setFontColor("#FFFFFF")
-    .setHorizontalAlignment("center");
   sheet.setFrozenRows(1);
+  
+  // Tự động tạo sẵn ô Checkbox cho cột Ẩn (cột F) và Best Seller (cột G)
+  sheet.getRange("F2:G200").insertCheckboxes();
 }
 
 
