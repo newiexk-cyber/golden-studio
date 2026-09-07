@@ -1,0 +1,48 @@
+/* ==============================================================================
+   DESIGN TOKENS & CSS VARIABLES - HIGH-FASHION MINIMALISM SYSTEM
+   Inspired by Tran Vu Bang Studio & Contemporary Editorial Photography
+   ============================================================================== */
+
+:root {
+    /* 🎨 Monochrome Color Palette */
+    --bg-page: #ffffff;                /* Pure Crisp White */
+    --bg-subtle: #fafafa;              /* Clean Off-White */
+    --bg-surface: #f4f4f4;             /* Muted Gray Surface */
+    --bg-dark: #111111;                /* Solid Pure Black */
+    --bg-dark-subtle: #1a1a1a;
+
+    /* 🖋️ Text Hierarchy */
+    --text-primary: #111111;           /* Deep Black for Main Headings & Body */
+    --text-secondary: #4a4a4a;         /* Charcoal for Descriptions */
+    --text-muted: #888888;             /* Muted Gray for Meta & Categories */
+    --text-light: #ffffff;             /* White Text for Dark Contexts */
+
+    /* 🪞 Minimalist Borders & Lines */
+    --border-hairline: #eeeeee;        /* Ultra-thin Separator */
+    --border-subtle: #e0e0e0;          /* Subtle Border */
+    --border-dark: #111111;            /* Crisp Black Border */
+    --border-focus: #000000;
+
+    /* 🔤 Clean Sans-Serif Typography */
+    --font-primary: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    /* 📐 Layout & Spacing */
+    --container-max-width: 1560px;
+    --header-height: 80px;
+    --header-height-mobile: 65px;
+    --section-padding-y: clamp(50px, 7vw, 100px);
+    --section-padding-x: clamp(16px, 4vw, 48px);
+    --gallery-gap: 8px;
+
+    /* ⚡ Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-smooth: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* 🎚️ Z-Index Management */
+    --z-base: 1;
+    --z-sticky: 100;
+    --z-filter: 90;
+    --z-modal: 1000;
+    --z-lightbox: 2000;
+}

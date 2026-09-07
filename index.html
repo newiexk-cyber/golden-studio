@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#111111">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>GOLDEN STUDIO — Contemporary Photography & Art Direction</title>
+    <meta name="description" content="GOLDEN STUDIO - Studio nhiếp ảnh nghệ thuật và thời trang đương đại chuyên sâu Chân dung, Nàng thơ, Beauty, Couple & Profile thương hiệu.">
+
+    <!-- Preload Critical Banner Images for Instant 0ms Paint -->
+    <link rel="preload" as="image" href="images/banner-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="images/banner-2.jpg" fetchpriority="high">
+
+    <!-- Preconnect & Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Minimal Header Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ==================== 1. HEADER & MINIMAL NAVIGATION ==================== -->
+    <header class="site-header transparent" id="siteHeader">
+        <div class="container header-inner">
+            <!-- Brand Text Logo -->
+            <a href="#heroSliderSection" class="brand-logo" id="brandLogo">
+                <span class="brand-title" id="brandTitle">GOLDEN STUDIO</span>
+                <span class="brand-tagline" id="brandTagline">PHOTOGRAPHY & ART DIRECTION</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-desktop" id="navDesktop" aria-label="Main Navigation">
+                <a href="#heroSliderSection" class="nav-link active">TRANG CHỦ</a>
+                <a href="#gallery" class="nav-link" id="navPortfolio">THƯ VIỆN ẢNH</a>
+                <a href="#pricing" class="nav-link" id="navPricing">BẢNG GIÁ</a>
+                <a href="#about" class="nav-link" id="navAbout">TRIẾT LÝ</a>
+                <a href="#contact" class="nav-link" id="navContact">LIÊN HỆ</a>
+            </nav>
+
+            <!-- Social Icons & Actions (Inspired by Tran Vu Bang Header) -->
+            <div class="header-actions">
+                <div class="header-social-icons">
+                    <a href="tel:0387244387" class="header-icon-btn icon-phone" title="Gọi Hotline: 0387 244 387" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+                    <a href="https://zalo.me/0387244387" target="_blank" class="header-icon-btn icon-zalo" title="Nhắn tin Zalo: 0387 244 387" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
+                    <a href="https://maps.app.goo.gl/7dGpQ6c3dHyFEKJN6" target="_blank" class="header-icon-btn icon-map" title="Chỉ đường Google Maps" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100094054747317" target="_blank" class="header-icon-btn icon-fb" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/goldenstudio.vn/" target="_blank" class="header-icon-btn icon-insta" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@goldenstudio.vn" target="_blank" class="header-icon-btn icon-tiktok" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. HERO COVER SLIDER SECTION (HÌNH BÌA TỰ ĐỘNG THAY ĐỔI) ==================== -->
+    <section class="hero-slider-section" id="heroSliderSection">
+        <!-- Slides Container -->
+        <div class="hero-slides-wrapper" id="heroSlidesWrapper">
+            <!-- Slide 1: Muse In White Cardigan -->
+            <div class="hero-slide active">
+                <div class="hero-slide-bg" style="background-image: url('images/banner-1.jpg');"></div>
+                <div class="hero-slide-overlay"></div>
+                <div class="container hero-slide-content">
+                    <span class="hero-tag">✦ GOLDEN STUDIO SIGNATURE</span>
+                    <h1 class="hero-title">TÔN VINH VẺ ĐẸP CẢM XÚC & NÀNG THƠ</h1>
+                    <p class="hero-desc">Không gian studio ấm cúng kết hợp cùng nghệ thuật ánh sáng tinh tế, khắc họa chân thực thần thái và vẻ đẹp riêng biệt của bạn.</p>
+                    <div class="hero-cta-group">
+                        <button class="hero-btn btn-primary" onclick="openBookingModal()">ĐẶT LỊCH HẸN</button>
+                        <a href="#pricing" class="hero-btn btn-outline">XEM BẢNG GIÁ</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Crimson Butterfly Noir Concept -->
+            <div class="hero-slide">
+                <div class="hero-slide-bg" style="background-image: url('images/banner-2.jpg');"></div>
+                <div class="hero-slide-overlay"></div>
+                <div class="container hero-slide-content">
+                    <span class="hero-tag">✦ HIGH-FASHION & DRAMATIC NOIR</span>
+                    <h2 class="hero-title">NGHỆ THUẬT THỊ GIÁC ĐIỆN ẢNH ĐỘC BẢN</h2>
+                    <p class="hero-desc">Đầu tư bối cảnh công phu, tone đỏ hoàng gia huyền bí cùng phong cách trang điểm concept tạo nên những tác phẩm xuất sắc nhất.</p>
+                    <div class="hero-cta-group">
+                        <a href="#gallery" class="hero-btn btn-primary">KHÁM PHÁ BỘ ẢNH</a>
+                        <a href="#pricing" class="hero-btn btn-outline">TƯ VẤN GÓI CHỤP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="hero-nav-arrow hero-prev" id="heroPrevBtn" aria-label="Previous Slide">‹</button>
+        <button class="hero-nav-arrow hero-next" id="heroNextBtn" aria-label="Next Slide">›</button>
+
+        <!-- Slider Dots -->
+        <div class="hero-dots" id="heroDots">
+            <span class="hero-dot active" data-slide="0"></span>
+            <span class="hero-dot" data-slide="1"></span>
+        </div>
+    </section>
+
+    <!-- ==================== 3. DYNAMIC PORTFOLIO FILTER TABS ==================== -->
+    <section class="portfolio-filter-section" id="portfolioFilterSection">
+        <div class="container">
+            <div class="filter-tabs-wrapper" id="filterTabsWrapper">
+                <!-- Filter Tabs will be generated dynamically by portfolio-gallery.js -->
+                <button class="filter-tab active" data-category="all">ALL WORKS</button>
+                <button class="filter-tab" data-category="Nữ">NỮ</button>
+                <button class="filter-tab" data-category="Nam">NAM</button>
+                <button class="filter-tab" data-category="Couple">COUPLE</button>
+                <button class="filter-tab" data-category="Fashion">FASHION</button>
+                <button class="filter-tab" data-category="Beauty">BEAUTY</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. PORTFOLIO GALLERY & BEST SELLER SHOWCASE ==================== -->
+    <main class="gallery-section reveal-on-scroll" id="gallery">
+        <div class="container gallery-container-fluid">
+            <!-- LƯỚI ẢNH CONCEPT CHUYÊN NGHIỆP (KHÔNG LỆCH KHUNG, NÉT CĂNG) -->
+            <div class="masonry-gallery" id="masonryGallery">
+                <!-- Initial loading skeleton -->
+                <div class="gallery-skeleton"></div>
+                <div class="gallery-skeleton"></div>
+                <div class="gallery-skeleton"></div>
+                <div class="gallery-skeleton"></div>
+            </div>
+
+            <!-- NÚT XEM THÊM TẤT CẢ CONCEPT (HIỂN THỊ CÁC CONCEPT CÒN LẠI NGOÀI BEST SELLER) -->
+            <div class="gallery-more-container" id="galleryMoreContainer" style="display: none;">
+                <button class="gallery-more-btn" id="galleryMoreBtn" type="button">
+                    <span id="galleryMoreBtnText">XEM THÊM TẤT CẢ CONCEPT</span>
+                    <i class="fas fa-chevron-down gallery-more-icon" id="galleryMoreIcon"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== 5. INTEGRATED SEGMENT PRICING ==================== -->
+    <section class="section pricing-section reveal-on-scroll" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="pricingTag">PRICING & SEGMENTS</span>
+                <h2 class="section-title" id="pricingTitle">PHÂN KHÚC DỊCH VỤ & BẢNG GIÁ</h2>
+                <p class="section-subtitle" id="pricingSubtitle">Hệ thống gói chụp được phân tầng minh bạch từ cơ bản đến độc bản may đo riêng.</p>
+            </div>
+
+            <div class="pricing-grid" id="pricingGrid">
+                <!-- Pricing Cards will be rendered dynamically from config.js / Google Sheets -->
+            </div>
+
+            <!-- ==================== LƯU Ý DÀNH CHO KHÁCH HÀNG (CUSTOMER POLICY NOTES) ==================== -->
+            <div class="pricing-notes-card" id="pricingNotesCard">
+                <div class="pricing-notes-header">
+                    <span class="pricing-notes-badge">✦ STUDIO POLICY & TERMS</span>
+                    <h3 class="pricing-notes-title">LƯU Ý DÀNH CHO KHÁCH HÀNG</h3>
+                    <p class="pricing-notes-subtitle">Để buổi chụp diễn ra trọn vẹn và đạt chất lượng nghệ thuật cao nhất, quý khách vui lòng tham khảo các chính sách sau:</p>
+                </div>
+
+                <div class="pricing-notes-grid">
+                    <div class="pricing-note-item">
+                        <span class="policy-num">01</span>
+                        <div class="note-text">Quý khách hàng <strong>cọc trước 1.000.000đ / bộ</strong>, phần còn lại thanh toán sau khi hoàn tất buổi chụp.</div>
+                    </div>
+                    <div class="pricing-note-item">
+                        <span class="policy-num">02</span>
+                        <div class="note-text">Hỗ trợ <strong>dời lịch 01 lần</strong> nếu khách hàng thanh toán đầy đủ gói chụp và phí trang phục để giữ lịch.</div>
+                    </div>
+                    <div class="pricing-note-item">
+                        <span class="policy-num">03</span>
+                        <div class="note-text">Khách hàng sẽ nhận được ảnh hoàn thiện sau <strong>8–10 ngày</strong> (kể từ khi chọn ảnh).</div>
+                    </div>
+                    <div class="pricing-note-item">
+                        <span class="policy-num">04</span>
+                        <div class="note-text"><strong>Phụ thu 2.000.000đ</strong> đối với trang phục thứ 2 cùng bối cảnh hoặc tường vô cực.</div>
+                    </div>
+                    <div class="pricing-note-item">
+                        <span class="policy-num">05</span>
+                        <div class="note-text">Ảnh chỉnh sửa tiêu chuẩn: <strong>08 ảnh / 1 bộ</strong> (bàn giao toàn bộ file ảnh gốc chất lượng cao).</div>
+                    </div>
+                    <div class="pricing-note-item">
+                        <span class="policy-num">06</span>
+                        <div class="note-text">Chi phí chỉnh sửa phát sinh thêm: <strong>100.000đ / ảnh</strong>.</div>
+                    </div>
+                </div>
+
+                <!-- Khối Quy định Phụ thu Set up & Đạo cụ riêng (Trao đổi và báo trước minh bạch) -->
+                <div class="pricing-notes-surcharge">
+                    <div class="surcharge-badge"><i class="fas fa-sparkles"></i> QUY ĐỊNH PHỤ THU SET UP &amp; ĐẠO CỤ</div>
+                    <div class="surcharge-text">
+                        <strong>Phụ thu đối với:</strong> Những set up cần sử dụng riêng cho buổi chụp như hoa tươi, bánh kem tươi,… hoặc các props studio chưa có sẵn, cần làm mới, thiết kế cầu kỳ hay trang phục ngoài concept, studio sẽ có phụ thu thêm chi phí.
+                    </div>
+                    <div class="surcharge-subtext">
+                        <i class="fas fa-info-circle"></i> Các khoản phụ thu bên mình sẽ trao đổi và báo trước với bạn để bạn nắm rõ chi phí trước khi chụp.
+                    </div>
+                </div>
+
+                <!-- Chú thích chính sách cọc với phong cách Luxury VIP Notice (thay cho box đỏ) -->
+                <div class="pricing-notes-notice">
+                    <div class="notice-badge"><i class="fas fa-shield-alt"></i> CHÍNH SÁCH ĐẶT CỌC</div>
+                    <div class="notice-content">Tiền đặt cọc sẽ <strong>không được hoàn lại</strong> trong trường hợp quý khách hủy gói chụp.</div>
+                </div>
+
+                <div class="pricing-notes-footer">
+                    <div class="notes-brand-group">
+                        <span class="notes-brand-name">GOLDEN STUDIO</span>
+                        <a href="tel:0387244387" class="notes-contact-link"><i class="fas fa-phone-alt"></i> Hotline: <strong>0387 244 387</strong></a>
+                    </div>
+                    <div class="notes-action-group">
+                        <a href="https://zalo.me/0387244387" target="_blank" class="notes-action-btn btn-zalo"><i class="fas fa-comment-dots"></i> Nhắn tin Zalo</a>
+                        <a href="https://maps.app.goo.gl/7dGpQ6c3dHyFEKJN6" target="_blank" class="notes-action-btn btn-map"><i class="fas fa-map-marker-alt"></i> Xem Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. ABOUT / PHILOSOPHY STATEMENT ==================== -->
+    <section class="section about-section reveal-on-scroll" id="about">
+        <div class="container">
+            <blockquote class="about-quote" id="aboutQuote">
+                “Chúng tôi không chỉ ghi lại hình ảnh, chúng tôi kiến tạo ngôn ngữ thị giác và cảm xúc độc bản cho từng khách hàng.”
+            </blockquote>
+            <cite class="about-author" id="aboutAuthor">GOLDEN STUDIO — CREATIVE DIRECTOR</cite>
+        </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT & CONNECT ==================== -->
+    <section class="section contact-section reveal-on-scroll" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" id="contactTag">GET IN TOUCH</span>
+                <h2 class="section-title" id="contactTitle">KẾT NỐI VÀ ĐẶT LỊCH</h2>
+                <p class="section-subtitle" id="contactSubtitle">Hãy để chúng tôi đồng hành cùng bạn trong buổi chụp ảnh tiếp theo.</p>
+            </div>
+
+            <div class="contact-channels">
+                <div class="contact-channel-item">
+                    <span class="contact-label">HOTLINE TRỰC TIẾP</span>
+                    <a href="tel:0387244387" class="contact-val" id="contactHotline">0387 244 387</a>
+                </div>
+                <div class="contact-channel-item">
+                    <span class="contact-label">TƯ VẤN ZALO</span>
+                    <a href="https://zalo.me/0387244387" target="_blank" class="contact-val" id="contactZalo">0387 244 387 (Zalo)</a>
+                </div>
+                <div class="contact-channel-item">
+                    <span class="contact-label">CHỈ ĐƯỜNG GOOGLE MAPS</span>
+                    <a href="https://maps.app.goo.gl/7dGpQ6c3dHyFEKJN6" target="_blank" class="contact-val" id="contactMap">Xem vị trí trên Google Maps</a>
+                </div>
+                <div class="contact-channel-item">
+                    <span class="contact-label">MESSENGER / FACEBOOK</span>
+                    <a href="https://www.facebook.com/profile.php?id=100094054747317" target="_blank" class="contact-val" id="contactMessenger">Chat Facebook</a>
+                </div>
+                <div class="contact-channel-item">
+                    <span class="contact-label">EMAIL BOOKING</span>
+                    <a href="mailto:hoangthetoan07061996@gmail.com" class="contact-val" id="contactEmail">hoangthetoan07061996@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. MINIMAL FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-copyright" id="footerCopyright">© 2026 GOLDEN STUDIO. ALL RIGHTS RESERVED.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/goldenstudio.vn/" target="_blank" class="footer-social-link">INSTAGRAM</a>
+                <a href="https://www.facebook.com/profile.php?id=100094054747317" target="_blank" class="footer-social-link">FACEBOOK</a>
+                <a href="https://www.tiktok.com/@goldenstudio.vn" target="_blank" class="footer-social-link">TIKTOK</a>
+                <a href="https://www.youtube.com/@goldenstudio" target="_blank" class="footer-social-link">YOUTUBE</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 9. FULLSCREEN MINIMAL LIGHTBOX ==================== -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
+        <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close Lightbox">✕</button>
+        <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous Image">←</button>
+        <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next Image">→</button>
+        
+        <div class="lightbox-content-wrapper">
+            <img src="" alt="Studio Photo" class="lightbox-main-img" id="lightboxImg">
+            <div class="lightbox-info">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-meta" id="lightboxMeta"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 10. MINIMAL BOOKING MODAL ==================== -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-card">
+            <span class="modal-close" id="bookingModalClose">✕</span>
+            <h3 class="modal-title">ĐẶT LỊCH HẸN TƯ VẤN</h3>
+            <p class="modal-desc">Vui lòng để lại thông tin, đội ngũ GOLDEN STUDIO sẽ liên hệ tư vấn trong 15 phút.</p>
+
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label class="form-label" for="clientName">HỌ VÀ TÊN</label>
+                    <input type="text" id="clientName" class="form-input" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="clientPhone">SỐ ĐIỆN THOẠI / ZALO</label>
+                    <input type="tel" id="clientPhone" class="form-input" placeholder="0387 xxx xxx" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="clientPackage">PHÂN KHÚC / GÓI QUAN TÂM</label>
+                    <select id="clientPackage" class="form-select">
+                        <option value="basic">Gói Basic (2.500.000 đ)</option>
+                        <option value="standard" selected>Gói Standard (3.500.000 đ) — Phổ biến</option>
+                        <option value="premium">Gói Premium (5.000.000 đ) — Cao cấp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="clientNote">GHI CHÚ THÊM (NẾU CÓ)</label>
+                    <textarea id="clientNote" class="form-textarea" rows="3" placeholder="Ngày dự kiến chụp, mong muốn concept..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">GỬI YÊU CẦU ĐẶT LỊCH</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="js/sheets-sync.js"></script>
+    <script src="js/portfolio-gallery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
