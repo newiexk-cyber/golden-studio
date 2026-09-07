@@ -1,82 +1,60 @@
 @echo off
-chcp 65001 >nul
-title 🚀 TỰ ĐỘNG ĐẨY CODE LÊN GITHUB - GOLDEN STUDIO
+title Push Code to GitHub - Golden Studio
 
 echo ========================================================
-echo   🌟 GOLDEN STUDIO - CÔNG CỤ TỰ ĐỘNG PUSH CODE LÊN GITHUB
+echo   GOLDEN STUDIO - TU DONG DAY CODE LEN GITHUB
 echo ========================================================
 echo.
 
-:: 1. Kiểm tra Git đã cài trên máy chưa
+REM 1. Kiem tra Git
 where git >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [LOI] Git chua duoc cai dat tren may tinh cua ban!
-    echo Vui long tai va cai dat Git tai: https://git-scm.com/downloads
+    echo [LOI] Git chua duoc cai dat tren may!
+    echo Vui long tai Git tai: https://git-scm.com
     echo.
     pause
     exit /b 1
 )
 
-:: 2. Khởi tạo Git repo nếu chưa có
+REM 2. Khoi tao repo neu chua co
 if not exist ".git" (
     echo [*] Dang khoi tao Git repository...
     git init -b main
-    echo [OK] Da khoi tao nhanh 'main'.
-    echo.
 )
 
-:: 3. Kiểm tra remote origin
+REM 3. Kiem tra remote
 git remote get-url origin >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [!] Chua tim thay lien ket voi GitHub Repo nao.
-    echo.
-    echo Vui long tao mot Repository moi tren GitHub (https://github.com/new).
-    set /p REPO_URL=">> Dan link GitHub Repo cua ban vao day (vi du: https://github.com/user/repo.git): "
-    
-    if "%REPO_URL%"=="" (
-        echo [LOI] Link GitHub khong duoc de trong!
-        pause
-        exit /b 1
+    echo [!] Chua co lien ket GitHub.
+    set /p REPO_URL=">> Dan link GitHub repo (vd: https://github.com/user/repo.git): "
+    if defined REPO_URL (
+        git remote add origin %REPO_URL%
     )
-    
-    git remote add origin %REPO_URL%
-    echo [OK] Da lien ket voi: %REPO_URL%
-    echo.
 )
 
-:: 4. Nhập ghi chú commit
+REM 4. Thuc hien commit va push
 echo.
-set /p COMMIT_MSG=">> Nhap noi dung cap nhat (Nhan Enter de lay mac dinh 'Cap nhat Golden Studio'): "
-if "%COMMIT_MSG%"=="" (
-    set COMMIT_MSG=Cap nhat website va backend Golden Studio
-)
-
-:: 5. Gom file và Commit
-echo.
-echo [*] Dang gom toan bo file...
+echo [*] Dang gom toan bo tap tin moi nhat...
 git add .
 
-echo [*] Dang tao Commit: "%COMMIT_MSG%"...
-git commit -m "%COMMIT_MSG%"
+echo [*] Dang commit du lieu...
+git commit -m "Cap nhat Golden Studio - %date% %time%"
 
-:: 6. Đẩy code lên GitHub
 echo.
 echo [*] Dang day code len GitHub (nhanh main)...
 git branch -M main
-git push -u origin main
+git push origin main
 
+echo.
 if %errorlevel% equ 0 (
-    echo.
     echo ========================================================
-    echo  ✨ THÀNH CÔNG! CODE ĐÃ ĐƯỢC PUSH LÊN GITHUB AN TOÀN!
+    echo   THANH CONG! CODE DA DUOC DAY LEN GITHUB AN TOAN!
     echo ========================================================
-    echo  Neu ban da ket noi repo nay voi Cloudflare Pages hoac Render,
-    echo  website se tu dong cap nhat trong vong 30 - 60 giay!
+    echo Cloudflare Pages se tu dong cap nhat web trong vai chuc giay!
 ) else (
-    echo.
-    echo [!] Push chua thanh cong. Vui long kiem tra lai:
-    echo     1. Quyen truy cap tai khoan GitHub cua ban.
-    echo     2. Link repo da dung chua (Personal Access Token hoac SSH key).
+    echo ========================================================
+    echo   CO LOI HOAC CHUA CO THAY DOI MOI DE PUSH!
+    echo ========================================================
 )
 
 echo.
