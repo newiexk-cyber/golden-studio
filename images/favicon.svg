@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1B8"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA771C"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#111111"/>
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#goldGrad)" stroke-width="14" opacity="0.6"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#goldGrad)" stroke-width="4" opacity="0.3"/>
+  <!-- Elegant Serif Letter G -->
+  <text x="50%" y="58%" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="290" font-weight="700" fill="url(#goldGrad)" dy=".3em">G</text>
+  <!-- Sparkle Accent -->
+  <polygon points="360,130 368,148 386,156 368,164 360,182 352,164 334,156 352,148" fill="url(#goldGrad)"/>
+</svg>
