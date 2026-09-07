@@ -134,19 +134,30 @@ const BookingModal = (function () {
         const form = document.getElementById('quickBookingForm');
         if (form) form.reset();
 
-        // Hiển thị Toast thông báo thành công
         const studioName = window.STUDIO_CONFIG?.branding?.studioName || 'Golden Studio';
-        showToast(`✨ Yêu cầu đặt lịch thành công! Ekip ${studioName} sẽ liên hệ tư vấn trong 15 phút.`);
 
-        // Tùy chọn: Chuyển tiếp nhanh vào Zalo OA với thông tin đã chọn
+        // Tự động soạn sẵn tin nhắn đặt lịch chuyên nghiệp
+        const bookingMessage = `✦ YÊU CẦU ĐẶT LỊCH CHỤP - ${studioName.toUpperCase()} ✦\n` +
+            `• Họ và tên: ${name}\n` +
+            `• Số điện thoại: ${phone}\n` +
+            `• Concept quan tâm: ${concept || 'Tư vấn theo phong cách'}\n` +
+            `• Ngày dự kiến: ${date || 'Linh hoạt'}\n` +
+            `• Thời gian gửi: ${new Date().toLocaleString('vi-VN')}`;
+
+        // Tự động sao chép vào bộ nhớ tạm (Clipboard) của khách
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(bookingMessage).catch(() => {});
+        }
+
+        // Hiển thị Toast thông báo thành công và nhắc dán Zalo
+        showToast(`✨ Đã sao chép thông tin đặt lịch! Đang mở Zalo của ${studioName}...`);
+
+        // Tự động chuyển tiếp vào Zalo của Studio
         const zaloUrl = window.STUDIO_CONFIG?.contact?.zaloUrl;
         if (zaloUrl) {
             setTimeout(() => {
-                const proceedZalo = confirm(`Yêu cầu của bạn đã được ghi nhận! Bạn có muốn mở Zalo để trao đổi trực tiếp với tư vấn viên ngay bây giờ không?`);
-                if (proceedZalo) {
-                    window.open(zaloUrl, '_blank');
-                }
-            }, 800);
+                window.open(zaloUrl, '_blank');
+            }, 600);
         }
     }
 
