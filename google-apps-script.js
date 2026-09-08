@@ -33,7 +33,7 @@ function onOpen() {
     .addItem("♻️ 2. Đồng bộ toàn bộ (Quét lại tất cả ảnh)", "syncDriveToSheetsFull")
     .addSeparator()
     .addItem("🔗 3. Cập nhật lại Link Drive & Link Web", "updateAllLinks")
-    .addItem("🧹 4. Dọn dẹp tag trùng ở cột Chủ đề", "cleanDuplicateTagsOnSheet")
+    .addItem("🧹 4. Xóa chữ 'Tất cả' & Làm sạch tag cột Chủ đề", "cleanAllInvalidTags")
     .addSeparator()
     .addItem("🛠️ 5. Khởi tạo cấu trúc bảng chuẩn", "runInitialization")
     .addToUi();
@@ -492,12 +492,15 @@ function onEdit(e) {
       };
       
       const newStr = String(newValue).trim();
-      const oldValue = e.oldValue;
-      
-      const oldParts = oldValue ? String(oldValue).split(",").map(p => p.trim()).filter(Boolean) : [];
+      const isTatCa = function(str) {
+        const norm = normalize(str).toLowerCase();
+        return norm === "tất cả" || norm === "tat ca" || norm === "all" || norm === "all works";
+      };
+
+      const oldParts = oldValue ? String(oldValue).split(",").map(p => p.trim()).filter(p => p && !isTatCa(p)) : [];
       const oldPartsNorm = oldParts.map(p => normalize(p).toLowerCase());
       
-      const newParts = newStr.split(",").map(p => p.trim()).filter(Boolean);
+      const newParts = newStr.split(",").map(p => p.trim()).filter(p => p && !isTatCa(p));
       const newPartsNorm = newParts.map(p => normalize(p).toLowerCase());
       
       let isDeleteAction = true;
@@ -517,7 +520,7 @@ function onEdit(e) {
         const seenNew = new Set();
         for (const part of newParts) {
           const norm = normalize(part).toLowerCase();
-          if (!seenNew.has(norm) && norm !== "") {
+          if (!seenNew.has(norm) && norm !== "" && !isTatCa(part)) {
             seenNew.add(norm);
             uniqueNew.push(part.replace(/&amp;/g, "&").trim());
           }
@@ -529,7 +532,7 @@ function onEdit(e) {
         const combinedSeen = new Set();
         for (const part of combined) {
           const norm = normalize(part).toLowerCase();
-          if (!combinedSeen.has(norm) && norm !== "") {
+          if (!combinedSeen.has(norm) && norm !== "" && !isTatCa(part)) {
             combinedSeen.add(norm);
             cleanCombined.push(part.replace(/&amp;/g, "&").trim());
           }
@@ -544,7 +547,8 @@ function onEdit(e) {
   }
 }
 
-function cleanDuplicateTagsOnSheet() {
+// Hàm dọn sạch hoàn toàn chữ "Tất cả" và các tag trùng lặp trong cột Chủ đề
+function cleanAllInvalidTags() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = getConceptSheet(ss);
   if (!sheet) return;
@@ -566,20 +570,29 @@ function cleanDuplicateTagsOnSheet() {
       .trim();
   };
   
+  const isTatCa = function(str) {
+    const norm = normalize(str).toLowerCase();
+    return norm === "tất cả" || norm === "tat ca" || norm === "all" || norm === "all works";
+  };
+  
   let fixedCount = 0;
   for (let i = 0; i < values.length; i++) {
-    const cellValue = values[i][0];
+    const cellValue = String(values[i][0] || "");
     if (cellValue) {
-      const parts = cellValue.split(",").map(p => p.trim()).filter(Boolean);
+      const parts = cellValue.split(/[,;\n]+/).map(p => p.trim()).filter(Boolean);
       const uniqueParts = [];
       const seen = new Set();
+      
       for (let j = 0; j < parts.length; j++) {
-        const norm = normalize(parts[j]).toLowerCase();
-        if (!seen.has(norm) && norm !== "") {
+        const part = parts[j];
+        const norm = normalize(part).toLowerCase();
+        // Loại bỏ hoàn toàn chữ Tất cả / All
+        if (!isTatCa(part) && !seen.has(norm) && norm !== "") {
           seen.add(norm);
-          uniqueParts.push(parts[j].replace(/&amp;/g, "&").trim());
+          uniqueParts.push(part.replace(/&amp;/g, "&").trim());
         }
       }
+      
       const newValue = uniqueParts.join(", ");
       if (newValue !== cellValue) {
         values[i][0] = newValue;
@@ -590,8 +603,8 @@ function cleanDuplicateTagsOnSheet() {
   
   if (fixedCount > 0) {
     range.setValues(values);
-    SpreadsheetApp.getUi().alert("Dọn dẹp hoàn tất", `Đã lọc trùng và sửa thành công ${fixedCount} ô chứa tag bị lặp!`, SpreadsheetApp.getUi().ButtonSet.OK);
+    SpreadsheetApp.getUi().alert("Dọn dẹp thành công", `Đã xóa sạch chữ 'Tất cả' và sửa lỗi cho ${fixedCount} dòng! Các dấu tam giác đỏ đã biến mất.`, SpreadsheetApp.getUi().ButtonSet.OK);
   } else {
-    SpreadsheetApp.getUi().alert("Thông báo", "Không tìm thấy ô nào bị trùng lặp tag.", SpreadsheetApp.getUi().ButtonSet.OK);
+    SpreadsheetApp.getUi().alert("Thông báo", "Không tìm thấy chữ 'Tất cả' nào cần xóa.", SpreadsheetApp.getUi().ButtonSet.OK);
   }
 }
