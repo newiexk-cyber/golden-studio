@@ -312,6 +312,17 @@ function syncDriveToSheetsCore(isQuick) {
         
         if (fId && processedFolderIds.has(fId)) {
           const row = values[r];
+          // Tự động loại bỏ hoàn toàn chữ 'Tất cả' nếu còn sót lại trong dữ liệu cũ
+          if (row[colIdx.theme]) {
+            row[colIdx.theme] = String(row[colIdx.theme])
+              .split(/[,;\n]+/)
+              .map(p => p.trim())
+              .filter(p => {
+                const l = p.toLowerCase();
+                return l && l !== "tất cả" && l !== "tat ca" && l !== "all" && l !== "all works";
+              })
+              .join(", ");
+          }
           row[colIdx.stt] = stt;
           row[colIdx.driveFolderLink] = generateFolderDriveLink(fId);
           row[colIdx.conceptWebLink] = generateConceptWebLink(stt);
@@ -473,6 +484,7 @@ function onEdit(e) {
   // Áp dụng cho cột Chủ đề từ dòng 2 trở đi
   if (range.getColumn() === themeColNumber && range.getRow() > 1) {
     const newValue = e.value;
+    const oldValue = e.oldValue || "";
     if (!newValue) return;
     
     const lock = LockService.getScriptLock();
